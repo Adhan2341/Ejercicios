@@ -1,0 +1,75 @@
+package paquete;
+
+import javax.swing.JOptionPane;
+
+public class romanos {
+
+	public static void main(String[] args) {
+	      String e;
+	      int n;
+	      do {
+	            e= JOptionPane.showInputDialog("Introduce un numero no mayor a 1000: ");
+	            n = Integer.parseInt(e);
+	      } while (n < 1 || n > 1000);
+	     JOptionPane.showMessageDialog(null, "El resutado es: "+ conversion(n));
+	  }
+
+	  public static String conversion(int v) {
+	      int i, m, c, d, u;
+	      String trans = "";
+	      m = v / 1000;
+	      c = v / 100 % 10;
+	      d = v / 10 % 10;
+	      u = v % 10;
+	      for (i = 1; i <= m; i++) {
+	             trans = trans + "M";
+	      }
+
+	      if (c == 9) {
+	          trans = trans + "CM";
+	      } else if (c >= 5) {
+	                     trans = trans + "D";
+	                     for (i = 6; i <= c; i++) {
+	                            trans = trans + "C";
+	                     }
+	      } else if (c == 4) {
+	                      trans = trans + "CD";
+	      } else {
+	                  for (i = 1; i <= c; i++) {
+	                         trans = trans + "C";
+	                  }
+	      }
+
+	      if (d == 9) {
+	           trans = trans + "XC";
+	      } else if (d >= 5) {
+	                      trans = trans + "L";
+	                      for (i = 6; i <= d; i++) {
+	                            trans = trans + "X";
+	                      }
+	      } else if (d == 4) {
+	                      trans = trans + "XL";
+	      } else {
+	                    for (i = 1; i <= d; i++) {
+	                           trans = trans + "X";
+	                    }
+	      }
+
+	      if (u == 9) {
+	           trans = trans + "IX";
+	      } else if (u >= 5) {
+	                      trans = trans + "V";
+	                      for (i = 6; i <= u; i++) {
+	                             trans = trans + "I";
+	                      }
+	      } else if (u == 4) {
+	                      trans = trans + "IV";
+	      } else {
+	                  for (i = 1; i <= u; i++) {
+	                         trans = trans + "I";
+	                  }
+	      }
+	      return trans;
+	  }
+}
+
