@@ -1,0 +1,72 @@
+Clase objeto
+
+package paquete;
+
+import javax.swing.JOptionPane;
+
+public class objetos {
+
+	public static void main(String[] args) {
+		String op="";
+		 double tamaño=Double.parseDouble(JOptionPane.showInputDialog("Tamaño del lado del cuadrado: "));
+		 cuadrado cuadrado1 = new cuadrado();
+	     cuadrado1.setLado(tamaño);
+        do{
+            op=JOptionPane.showInputDialog("1.- Calcular area\n 2.- Perimetro\n 3.- Cancelar.\n 4.- Salir.");
+           
+            if(op.equals("1")){
+                JOptionPane.showMessageDialog(null, "Usted ha introducido: "+cuadrado1.gedLado()+"\ncomo tamaño del lado del cuadrado\n");
+                JOptionPane.showMessageDialog(null, "El area del cuadrado es:\n"+cuadrado1.calcularArea());
+            }
+            else if(op.equals("2")){
+            	 JOptionPane.showMessageDialog(null, "Usted ha introducido: "+cuadrado1.gedLado()+"\ncomo tamaño del lado del cuadrado\n");
+                 JOptionPane.showMessageDialog(null, "El perimetro del cuadrado es:\n"+cuadrado1.calcularPerimetro());   
+            }
+            else if(op.equals("3")){
+            	 JOptionPane.showMessageDialog(null, "Usted ha introducido: "+cuadrado1.gedLado()+"\ncomo tamaño del lado del cuadrado\n");
+            	 tamaño=Double.parseDouble(JOptionPane.showInputDialog("Tamaño del lado del cuadrado: "));
+        	     cuadrado1.setLado(tamaño);
+            }
+            else if(op.equals("4")){
+                System.exit(0);
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Ingrese una opcion valida");
+            }
+        }while(!op.equals("d"));
+
+	}
+
+}
+
+
+Clase cuadrado
+
+
+package paquete;
+
+public class cuadrado{
+    
+    double lado;
+    
+    cuadrado(){
+        
+    }
+    
+    public void setLado(double l){
+        lado=l;
+    }
+    
+    public double gedLado(){
+        return lado;
+    }
+    
+    public double calcularArea(){
+        return lado*lado;
+    }
+    public double calcularPerimetro() {
+		return lado*4; 
+    	
+    }
+}
+
