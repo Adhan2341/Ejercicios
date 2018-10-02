@@ -1,4 +1,4 @@
-# Ejercicios
+# Morse
 package paquete;
 import javax.swing.JOptionPane;
 
